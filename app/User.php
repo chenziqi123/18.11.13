@@ -15,8 +15,9 @@ class User extends Authenticatable
      *
      * @var array
      */
+//    往表单中写入的数据
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','email_verified_at'
     ];
 
     /**
@@ -25,6 +26,13 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token'
     ];
+
+    public function getIconAttribute( $key )
+    {
+//        去找图片的路径
+//        三元判断 $key里面有值的时候就执行$key 没有值的时候就执行默认图片
+        return $key?:asset('org/image/user.jpg');
+    }
 }

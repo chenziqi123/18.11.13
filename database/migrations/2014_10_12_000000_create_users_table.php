@@ -17,8 +17,10 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('icon')->default('')->comment('用户头像');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->unsignedTinyInteger('is_admin')->default(0)->comment('是否管理员1是，0否');
             $table->rememberToken();
             $table->timestamps();
         });
