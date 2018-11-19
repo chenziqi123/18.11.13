@@ -11,6 +11,8 @@ class CreateUsersTable extends Migration
      *
      * @return void
      */
+//    迁移文件
+//往数据库里面迁移的列
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {

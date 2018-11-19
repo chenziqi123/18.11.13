@@ -17,6 +17,7 @@ class AdminMiddleware
     {
         //dd(!auth()->check());
         //auth()->check()   检测用户是否登录
+//        中间件
         if(!auth()->check() || auth()->user()->is_admin != 1){
             return redirect()->route('home');
         }

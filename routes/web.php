@@ -35,8 +35,10 @@ Route::post ('passwordResetForm','UserController@passwordResetForm')->name ('pas
 //10.从这里加载CodeControllerr类里面的send方法
 Route::any('/code/send','Util\CodeController@send')->name('code.send');
 
-//后台路由;
+//后台路由;  后台管理
 Route::group(['middleware' => ['admin.auth'],'prefix'=>'admin','namespace'=>'Admin','as'=>'admin.'],function(){
     Route::get ('index','IndexController@index')->name ('index');
+    //后台增删改查
+    Route::resource ('category','CategoryController');
 });
-Route::get ('indexff','Admin\IndexController@indexff')->name ('indexff');
+

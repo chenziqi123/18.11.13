@@ -28,7 +28,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token'
     ];
-
+//       getAttribute 获取的所有数据
+//      getIconAttribute  获取所有数据中叫Icon的数据
+//        在任何地方都可以调用
+//          在这里是在静态模版中调用了
     public function getIconAttribute( $key )
     {
 //        去找图片的路径

@@ -17,7 +17,7 @@
     <!-- Theme CSS -->
     <link rel="stylesheet" href="{{asset ('org/assets')}}/css/theme.min.css">
 
-    <title>Dashkit</title>
+    <title>陈子祺私人网站</title>
 </head>
 <body>
 
@@ -34,7 +34,7 @@
         <!-- Brand -->
         <a class="navbar-brand mr-auto" href="index.html">
 
-            <img src="{{asset ('org/assets')}}/img/logo.svg" alt="..." class="navbar-brand-img">
+            <img src="{{asset ('org/image/41.jpg')}}" style="width: 80px;" alt="..." class="navbar-brand-img">
         </a>
 
         <!-- Form -->
@@ -537,11 +537,13 @@
                 <!-- Menu -->
                 <div class="dropdown-menu dropdown-menu-right">
                     <a href="profile-posts.html" class="dropdown-item">{{auth()->user()->name}}</a>
-
+                      {{--第一种方法检测是否是管理员登录--}}
                     @if(auth()->user()->is_admin ==1)
+{{--                    @can('view',auth ()->user ())--}}
                     <a href="{{route ('admin.index')}}" class="dropdown-item">后台管理</a>
-                     <a href="{{route ('indexff')}}" class="dropdown-item">管理员登录</a>
-                 @endif
+
+                 {{--@endif--}}
+                    @endcan
                     <hr class="dropdown-divider">
                     <a href="{{route ('logout')}}" class="dropdown-item">注销登录</a>
                     <a href="{{route ('passwordReset')}}" class="dropdown-item">修改密码</a>

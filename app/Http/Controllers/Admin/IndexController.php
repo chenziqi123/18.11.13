@@ -11,7 +11,4 @@ class IndexController extends Controller
             return view ('admin.index.index');
         }
 
-        public function indexff(){
-            return view ('admin.index.indexff');
-        }
 }

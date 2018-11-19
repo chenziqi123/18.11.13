@@ -9,6 +9,7 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
+//    种子
     public function run()
     {
          $this->call(UsersTableSeeder::class);

@@ -70,6 +70,7 @@ class UserController extends Controller
                    }
 
 //                   注销登录
+//                 在手册用户管理的注销里面
                     public function logout(){
                         Auth::logout();
 //                        redirect() 跳转
